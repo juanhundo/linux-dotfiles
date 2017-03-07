@@ -1,5 +1,6 @@
-" Matts's vimperatorrc for colemaks
-colorscheme solarized
+" Matt's vimperatorrc for colemak
+colorscheme ashes
+set defsearch=duckduckgo
 set slv=hidden
 "js statusline.setVisibility(statusline.setVisibility.TOGGLE)
 " rebind to wasd like scrolling
