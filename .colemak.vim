@@ -8,6 +8,20 @@
 " recommended commands for running under Linux console
 " $ export TERM=xterm    # make Backspace and Ctrl-H work correctly
 " $ stty -ixon -ixoff    # make Ctrl+S and Ctrl+Q work correctly
+"
+" turn off mouse scroll
+:nmap <ScrollWheelUp> <nop>
+:nmap <S-ScrollWheelUp> <nop>
+:nmap <C-ScrollWheelUp> <nop>
+:nmap <ScrollWheelDown> <nop>
+:nmap <S-ScrollWheelDown> <nop>
+:nmap <C-ScrollWheelDown> <nop>
+:nmap <ScrollWheelLeft> <nop>
+:nmap <S-ScrollWheelLeft> <nop>
+:nmap <C-ScrollWheelLeft> <nop>
+:nmap <ScrollWheelRight> <nop>
+:nmap <S-ScrollWheelRight> <nop>
+:nmap <C-ScrollWheelRight> <nop>
 
 "
 " Colemak layout:                  |                 QWERTY layout:

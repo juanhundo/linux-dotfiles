@@ -1,4 +1,4 @@
-" Matts's vimperatorrc for colemak
+" Matts's vimperatorrc for colemaks
 colorscheme solarized
 set slv=hidden
 "js statusline.setVisibility(statusline.setVisibility.TOGGLE)

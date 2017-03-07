@@ -34,7 +34,7 @@ mpd_port = 6600
 ##
 mpd_music_dir = ~/music
 #
-mpd_crossfade_time = 10
+#mpd_crossfade_time = 5
 #
 ##### music visualizer #####
 ##

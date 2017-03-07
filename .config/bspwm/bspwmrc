@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+if ! pgrep -x "sxhkd" > /dev/null; then sxhkd -m -1; fi &
+if ! pgrep -x "polybar" > /dev/null; then $HOME/.config/polybar/launch.sh; fi &
+xsetroot -cursor_name left_ptr &
+
+#get colors from wal and set borders
+source /home/machu/.cache/wal/colors.sh 
+bspc config active_border_color "$color0"
+bspc config focused_border_color "$color4"
+bspc config normal_border_color "$color0"
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+#mouse settings
+bspc config focus_follows_pointer true
+bspc config pointer_modifier mod1
+
+bspc config border_width         4
+bspc config window_gap          25
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2
+bspc rule -a mpv state=floating border=off focus=on command="xdotool windowmove {} 960 -18"
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc config external_rules_command ~/.config/bspwm/rules/euclid_mode
+#bspc config external_rules_command ~/.config/bspwm/rules/mpvfloat
