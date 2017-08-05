@@ -1,11 +1,13 @@
 # linux-dotfiles
-These are the dotfiles that I run on my Arch Linux rig. Anything keyboard-related is configured for the Colemak style keyboard, be warned. 
+These are the dotfiles that I run on my Arch Linux rig. Anything keyboard-related is configured for Colemak.
 
 Ashes
 
-![][worlds1]
+![][ashes]
 
-![][worlds2]
+Embers
+
+![][embers]
 
 Solarized
 
@@ -13,14 +15,14 @@ Solarized
 
 Sketch
 
-![][sketch1]
+![][sketch]
 
 Grayscale
 
 ![][grayscale]
 
-[worlds1]: http://i.imgur.com/kuPt94Y.png
-[worlds2]: http://i.imgur.com/GkFkvmy.png
+[ashes]: http://i.imgur.com/kuPt94Y.png
+[embers]: http://imgur.com/51zXl5J
 [solarized]: http://i.imgur.com/blun1fr.png
 [grayscale]: https://i.imgur.com/jYaXF5e.jpg
-[sketch1]:http://i.imgur.com/F1SOEu5.png
+[sketch]:http://i.imgur.com/F1SOEu5.png
