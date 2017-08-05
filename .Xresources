@@ -1,15 +1,14 @@
+!------------------------------------------------------------------------------
+! ROFI Color theme
+! Copyright: 2017 leofa
 ! ------------------------------------------------------------------------------
-! ! ROFI Color theme
-! ! ------------------------------------------------------------------------------
-! Use extended color scheme
- rofi.color-enabled:                  true
-! Color scheme for normal row
- rofi.color-normal:                   #ffffff,#525d76,#f5f5f5,#95aec7,#f3f4f5
-! Color scheme for urgent row
- rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#393f45
-! Color scheme for active row
- rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#393f45
-! Color scheme window
- rofi.color-window:                   #ffffff,#f5f5f5
-! Separator style (none, dash, solid)
- rofi.separator-style:                solid
+! "Color scheme for normal row" Set from: File
+rofi.color-normal:                   argb:0016130F, #A39A90, argb:0016130F, #57826d, #DBD6D1
+! "Color scheme for urgent row" Set from: File
+rofi.color-urgent:                   argb:02d303b, #cc6666, argb:e52d303b, #a54242, #f9f9f9
+! "Color scheme for active row" Set from: File
+rofi.color-active:                   argb:02d303b, #b5bd68, argb:e42d303b, #8c9440, #f9f9f9
+! "Color scheme window" Set from: File
+rofi.color-window:                   argb:EA16130F, #16130F, argb:00000000
+! "Separator style (none, dash, solid)" Set from: XResources
+rofi.separator-style:                solid

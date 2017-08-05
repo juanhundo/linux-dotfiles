@@ -5,8 +5,8 @@ set encoding=utf-8
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
-"let g:airline_theme="base16_solarized"
-let g:airline_theme="wombat"
+let g:airline_theme="base16_embers"
+"let g:airline_theme="wombat"
 let g:notes_directories = ['~/cloud/pcc/notes']
 map <C-n> :NERDTreeToggle<CR>
 syntax on
