@@ -50,8 +50,9 @@ volume=100                              # default volume, 100 = unchanged
 # Video #
 #########
 
+profile=opengl-hq
 hwdec=vdpau
-vo=opengl-hq
+#vo=opengl-hq
 scale=ewa_lanczossharp
 cscale=ewa_lanczossoft
 dscale=mitchell

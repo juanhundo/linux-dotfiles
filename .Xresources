@@ -1,14 +1,2 @@
 !------------------------------------------------------------------------------
-! ROFI Color theme
-! Copyright: 2017 leofa
-! ------------------------------------------------------------------------------
-! "Color scheme for normal row" Set from: File
-rofi.color-normal:                   argb:0016130F, #A39A90, argb:0016130F, #57826d, #DBD6D1
-! "Color scheme for urgent row" Set from: File
-rofi.color-urgent:                   argb:02d303b, #cc6666, argb:e52d303b, #a54242, #f9f9f9
-! "Color scheme for active row" Set from: File
-rofi.color-active:                   argb:02d303b, #b5bd68, argb:e42d303b, #8c9440, #f9f9f9
-! "Color scheme window" Set from: File
-rofi.color-window:                   argb:EA16130F, #16130F, argb:00000000
-! "Separator style (none, dash, solid)" Set from: XResources
-rofi.separator-style:                solid
+Xft.dpi: 95

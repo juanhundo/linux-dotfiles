@@ -7,7 +7,7 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme="base16_embers"
 "let g:airline_theme="wombat"
-let g:notes_directories = ['~/cloud/pcc/notes']
+let g:notes_directories = ['~/cloud/usc/notes']
 map <C-n> :NERDTreeToggle<CR>
 syntax on
 filetype plugin indent on

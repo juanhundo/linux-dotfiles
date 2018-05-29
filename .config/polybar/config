@@ -25,10 +25,12 @@ margin-bottom = -10
 
 ;font-0 = envypn:pixelsize=13;0
 font-0 = PragmataPro:size=12;1
-font-3 = MaterialDesignIcons:size=14;0
-font-1 = FontAwesome:size=12;1
-font-4 = Termsynu:size=8;-1
-font-2 = WunconSiji:pixelsize=10;0
+font-5 = MaterialDesignIcons:size=14;0
+font-1 = FontAwesome:style=Regular:size=12;1
+;font-2 = FontAwesome5Free:style=Light:size=12;1
+;font-3 = FontAwesome5Free:style=Solid:size=12;1
+font-6 = Termsynu:size=8;-1
+font-4 = WunconSiji:pixelsize=10;0
 
 modules-left = powermenu wireless-network
 modules-center = bspwm-tmp
