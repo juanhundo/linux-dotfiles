@@ -4,14 +4,16 @@
 
 [bar/top]
 monitor = eDP-1
-width = 100%
-height = 24
+width = 40%
+height = 40
+offset-y = 10
+offset-x = 30%
 clickareas = 35
 wm-restack = bspwm
 
-background = #82000000
-foreground = #ccffffff
-linecolor = ${bar/bottom.background}
+background = #ffffff
+foreground = #1c2023
+linecolor = #fc0000
 
 spacing = 1
 ;spacing = 2
@@ -32,68 +34,9 @@ font-1 = FontAwesome:style=Regular:size=12;1
 font-6 = Termsynu:size=8;-1
 font-4 = WunconSiji:pixelsize=10;0
 
-modules-left = powermenu wireless-network
-modules-center = bspwm-tmp
-modules-right = volume backlight battery1 battery0 date
+modules-center = bspwm-tmp date
+radius = 5
 
-[bar/bottom]
-monitor = eDP-1
-bottom = true
-width = 100%
-height = 24
-wm-restack = bspwm
-
-tray-position = right
-tray-padding = 2
-;tray-background = ${bar/top.background} 
-
-background = ${bar/top.background}
-foreground = ${bar/top.foreground}
-linecolor = ${bar/top.background}
-
-spacing = 2
-lineheight = 0
-padding-left = 2
-padding-right = 4
-module-margin-left = 0
-module-margin-right = 6
-
-font-0 = PragmataPro:size=12;2
-font-1 = Unifont:size=10;1
-font-2 = FontAwesome:size=12;3
-font-3 = NotoSans-Regular:size=12;-1
-font-4 = MaterialDesignIcons:size=14;4
-font-5 = WunconSiji:pixelsize=10;0
-
-modules-left = mpd
-modules-right = cpu memory
-
-[bar/external_bottom]
-;inherit-from = bar/bottom
-
-monitor = HDMI-1
-bottom = true
-width = ${bar/bottom.width}
-height = ${bar/bottom.height}
-
-background = ${bar/bottom.background}
-foreground = ${bar/bottom.foreground}
-linecolor = ${bar/bottom.linecolor}
-
-spacing = ${bar/bottom.spacing}
-lineheight = ${bar/bottom.lineheight}
-padding-right = ${bar/bottom.padding_right}
-module-margin-left = ${bar/bottom.module_margin_left}
-module-margin-right = ${bar/bottom.module_margin_right}
-
-font-0 = ${bar/bottom.font-0}
-font-1 = ${bar/bottom.font-1}
-font-2 = ${bar/bottom.font-2}
-font-3 = ${bar/bottom.font-3}
-font-4 = ${bar/bottom.font-4}
-
-modules-left = bspwm
-modules-right = clock
 
 [module/backlight]
 type = internal/backlight
@@ -344,6 +287,7 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 ping-interval = 10
+format-padding = 1
 
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%

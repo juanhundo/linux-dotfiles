@@ -44,7 +44,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
-let g:notes_directories = ['~/cloud/usc/notes']
+let g:notes_directories = ['~/cloud/Documents/USC/notes']
 map <C-n> :NERDTreeToggle<CR>
 syntax on
 filetype plugin indent on
