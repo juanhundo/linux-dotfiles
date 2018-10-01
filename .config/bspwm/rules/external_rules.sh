@@ -25,6 +25,12 @@ if [ "$instance" = "gimp" ] ; then
 	exit 0
 fi
 
+if [ "$instance" = "Zathura" ] ; then
+	echo "state = tiling"
+
+	exit 0
+fi
+
 # preferred split directions:
 horiPref=east
 vertPref=south
