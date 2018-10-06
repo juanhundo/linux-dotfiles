@@ -11,11 +11,17 @@
 eval $(thefuck --alias)
 
 alias less=$pager
-alias plexmediaplayer='plexmediaplayer --scale-factor 1'
 alias reflect="reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 alias pingg="ping -c 3 8.8.8.8"
 alias walchange="wal -t -i .wal -o wal-set & sleep 1.2 && $HOME/.config/bspwm/bspwmrc"
-DEFAULT_USER="machu"
+alias sizesort='du -m --max-depth 1 | sort -n'
+alias weather='curl wttr.in'
+DEFAULT_USER=$(whoami)
+
+
+function mm() {
+    mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch:"$@"
+}
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
