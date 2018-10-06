@@ -16,6 +16,7 @@ alias pingg="ping -c 3 8.8.8.8"
 alias walchange="wal -t -i .wal -o wal-set & sleep 1.2 && $HOME/.config/bspwm/bspwmrc"
 alias sizesort='du -m --max-depth 1 | sort -n'
 alias weather='curl wttr.in'
+alias lock='betterlockscreen -l'
 DEFAULT_USER=$(whoami)
 
 
