@@ -1,0 +1,199 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+alt + Return
+	termite -c $HOME/.config/termite/$THEME
+
+# program launcher
+alt + space
+	tdrop -a -w 600 -y 690 -x 640 -h 400  termite
+
+alt + r
+	rofi -show run -terminal termite -lines 4 -eh 2 -width 20 -padding 10 -opacity 95 -bw 0 -font "Pragmata Pro Regular 16" -theme ~/.config/rofi/themes/Arc.rasi
+#	rofi -show run -terminal termite -lines 4 -eh 2 -width 30 -padding 10 -opacity 95 -bw 0 -font "Pragmata Pro 16"
+
+#file manager
+alt + f
+	termite -c $HOME/.config/termite/$THEME -e 'ranger'
+
+#volume
+XF86AudioLowerVolume
+	pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5%
+XF86AudioRaiseVolume
+	pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5%
+XF86AudioMute
+        pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle
+XF86AudioMicMute
+	pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo toggle
+
+#media
+XF86AudioPrev
+	mpc prev
+XF86AudioPlay
+	mpc toggle
+XF86AudioNext
+	mpc next	
+
+#brightness
+XF86MonBrightnessUp
+	sudo brillo -q -u 1500 -A 10
+	#light -A 5
+XF86MonBrightnessUp + shift
+	sudo brillo -u 1500 -S 100
+	#light -S 100
+XF86MonBrightnessDown
+	sudo brillo -q -u 1500 -U 10
+	#light -U 5
+XF86MonBrightnessDown + shift
+	sudo brillo -u 1500 -S 0.23
+	#light -S .2
+
+#lock
+XF86Display
+	betterlockscreen -l
+
+# make sxhkd reload its configuration files:
+alt + shift + p
+	pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+# quit bspwm normally
+alt + Escape
+	bspc quit
+
+# close and kill
+alt + {s, shift + s}
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+#super + t
+	#bspc desktop -l next
+
+# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
+alt + y
+	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
+
+# swap the current node and the biggest node
+alt + g
+	bspc node -s biggest
+
+#
+# state/flags
+#
+
+# toggle the window state
+alt + {shift + space,t}
+    state={floating,fullscreen}; \
+    bspc query -N -n "focused.$\{state\}" && state=tiled; \
+    bspc node -t "$state"
+
+# set the node flags
+alt + ctrl + {x,y,z}
+	bspc node -g {locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+alt + {n,e,u,i}
+	~/.config/bspwm/focus.sh {west,south,north,east}
+	#bspc node -f {west,south,north,east}
+#alt + shift + {n,e,u,i}
+	#euclid_mover {west,south,north,east}
+alt + shift + {n,e,u,i}
+	/home/machu/.config/bspwm/move.sh {west,south,north,east}
+
+
+# focus the node for the given path jump
+#super + {p,b,comma,period}
+	#bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous node in the current desktop
+alt + {_,shift + }z
+	bspc node -f {next,prev}.local
+
+# focus the next/previous desktop in the current monitor
+alt + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+alt + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+alt + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#Balance/equalize
+alt + l
+	bspc node @focused:/ -B
+alt + shift + l
+	bspc node @focused:/ -E
+
+#flip
+alt + a
+	bspc node @focused:/ --rotate 90
+alt + shift + a
+	bspc node @focused:/ --rotate -90 
+
+
+#
+# preselect
+#
+
+# preselect the direction
+alt + {v, shift + v}
+	bspc node -p {south,west}
+alt + {b, shift + b}
+	bspc node -p {east,north}
+
+# preselect the ratio
+alt + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+alt + c
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+#super + v + shift + space
+	#bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+#Use smart neesade script instead of defaults
+super + alt + {n,e,u,i}
+	/home/machu/.config/bspwm/resize.sh {west,south,north,east}
+
+# expand a window by moving one of its side outward
+#super + alt + {n,e,u,i}
+	#bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+#super + alt + shift + {n,e,u,i}
+	#bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+#alt + {Left,Down,Up,Right}
+	#bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# window gaps
+#
+alt + {d,h}
+        ~/.config/bspwm/gap.sh {+10,-10}
+
