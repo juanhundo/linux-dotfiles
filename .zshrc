@@ -17,6 +17,7 @@ alias walchange="wal -t -i .wal -o wal-set & sleep 1.2 && $HOME/.config/bspwm/bs
 alias sizesort='du -m --max-depth 1 | sort -n'
 alias weather='curl wttr.in'
 alias lock='betterlockscreen -l'
+alias plexmediaplayer='plexmediaplayer --scale-factor=1'
 DEFAULT_USER=$(whoami)
 
 
