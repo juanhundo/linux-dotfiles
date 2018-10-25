@@ -5,7 +5,7 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/machu/.oh-my-zsh
-  export EDITOR='vim'
+  export EDITOR='nvim'
   export PAGER='vimpager'
 
 eval $(thefuck --alias)

@@ -25,11 +25,20 @@ if [ "$instance" = "gimp" ] ; then
 	exit 0
 fi
 
-if [ "$instance" = "Zathura" ] ; then
-	echo "state = tiling"
+if [ "$instance" = "zathura" ] ; then
+        echo "state = tiled"
 
 	exit 0
 fi
+
+
+if [ "$instance" = "discord" ] ; then
+        echo "desktop = ^10"
+        #echo "state = floating"
+
+        exit 0
+fi
+
 
 # preferred split directions:
 horiPref=east
