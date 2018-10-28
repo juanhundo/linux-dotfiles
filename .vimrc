@@ -1,11 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+set smartcase
 
+" Vim-Plug
+call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
@@ -21,35 +20,29 @@ Plug 'w0rp/ale'
 " Initialize plugin system
 call plug#end()
 
+" NERDTree
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
 set encoding=utf-8
 set laststatus=2
 
+" vim-airline
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
-let g:airline_theme="base16_embers"
+let g:airline_theme="wombat"
 
-let g:ycm_server_python_interpreter = "/usr/bin/python2"
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
+" YouCompleteMe
 let g:ycm_server_python_interpreter = "/usr/bin/python3"
 
+" vimtex
 let g:vimtex_enabled = 1
 let g:vimtex_compiler_method = "latexmk"
 let g:tex_flavor = 'latex'
 let maplocalleader = ","
 
+" vim-notes
 let g:notes_directories = ['~/cloud/Documents/USC/notes']
-map <C-n> :NERDTreeToggle<CR>
+
 syntax on
 filetype plugin indent on
 source ~/.colemak.vim
