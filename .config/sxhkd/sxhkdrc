@@ -8,11 +8,10 @@ alt + Return
 
 # program launcher
 alt + space
-	tdrop -a -w 600 -y 690 -x 640 -h 400  termite
+	tdrop -a -w 1920 -y 690 -x 640 -h 400 -f '-c $HOME/.config/termite/$THEME' termite
 
 alt + r
 	rofi -show run -terminal termite -lines 4 -eh 2 -width 20 -padding 10 -opacity 95 -bw 0 -font "Pragmata Pro Regular 16" -theme ~/.config/rofi/themes/Arc.rasi
-#	rofi -show run -terminal termite -lines 4 -eh 2 -width 30 -padding 10 -opacity 95 -bw 0 -font "Pragmata Pro 16"
 
 #file manager
 alt + f
@@ -54,13 +53,13 @@ XF86MonBrightnessDown + shift
 XF86Display
 	betterlockscreen -l
 
-# make sxhkd reload its configuration files:
-alt + shift + p
-	pkill -USR1 -x sxhkd
-
 #
 # bspwm hotkeys
 #
+
+# make sxhkd reload its configuration files:
+alt + shift + p
+	pkill -USR1 -x sxhkd
 
 # quit bspwm normally
 alt + Escape
